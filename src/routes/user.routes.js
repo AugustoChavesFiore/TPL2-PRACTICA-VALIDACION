@@ -1,9 +1,11 @@
 import {Router} from 'express';
 import {newUser,login} from '../controllers/user.controller.js';
+import { validaciones2 } from '../models/user.schema.js';
+import { usuarioValidar } from '../middlewares/validarUsuario.js';
 const routes=Router();
 
 
-routes.post('/new',newUser);
+routes.post('/new',validaciones2,usuarioValidar, newUser);
 routes.post('/login',login);
 
 
