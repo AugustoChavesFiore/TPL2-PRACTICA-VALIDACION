@@ -43,6 +43,6 @@ import { sequelize } from "../database.js";
 
 );
 
-usuarios.sync({force:false}).then(()=>{
+usuarios.sync({force:true}).then(()=>{
     console.log('Tabla de Reservas creada');
 });
